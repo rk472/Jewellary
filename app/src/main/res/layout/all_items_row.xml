@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="match_parent"
+            android:id="@+id/item_image"
+            android:src="@drawable/image_demo"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:id="@+id/inquiry_btn"
+            android:layout_below="@id/item_image"
+            android:text="Inquiry"
+            android:paddingLeft="10sp"
+            android:paddingRight="10sp"
+            android:drawablePadding="10sp"
+            android:drawableLeft="@drawable/enquiry_vect"
+            android:layout_margin="5sp"
+            android:textColor="#ffffff"
+            android:textSize="17sp"
+            android:background="@drawable/inquiry_back"
+            android:layout_height="wrap_content" />
+        <ToggleButton
+            android:id="@+id/button_favorite"
+            android:layout_width="50dp"
+            android:layout_below="@id/item_image"
+            android:layout_alignParentRight="true"
+            android:layout_margin="5sp"
+            android:layout_height="50dp"
+            android:background="@drawable/toggle_like"
+            android:checked="false"
+            android:text=""
+            android:textOff=""
+            android:textOn=""/>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
