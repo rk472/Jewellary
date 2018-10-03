@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="9"
+    tools:context=".Fragments.CatagoryFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/pageback"
+        android:orientation="vertical"
+        android:weightSum="9">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/catagoty_text_all"
+            android:clickable="true"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00000000"
+                android:scaleType="fitXY"
+                android:clickable="false"
+                android:src="@drawable/textback"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/annie_use_your_telescope"
+                android:text="@string/catagory"
+                android:textStyle="bold"
+                android:clickable="false"
+                android:textColor="@color/colorBlack"
+                android:textSize="28sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="5sp"
+            android:weightSum="3"
+            android:layout_weight="8">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:weightSum="3"
+                android:layout_weight="1">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginBottom="15sp"
+                        android:layout_marginRight="5sp"
+                        android:id="@+id/necklace_btn"
+                        android:clickable="true"
+                        android:layout_marginLeft="5sp"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:clickable="false"
+                            android:src="@drawable/pic_necklace"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="22sp"
+                            android:textColor="#000000"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/annie_use_your_telescope"
+                            android:background="#ade2e2e2"
+                            android:clickable="false"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="5sp"
+                            android:text="Necklaces"/>
+                    </RelativeLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="15sp"
+                        android:id="@+id/bangle_btn"
+                        android:clickable="true"
+                        android:layout_marginRight="5sp"
+                        android:layout_marginLeft="5sp"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:clickable="false"
+                            android:src="@drawable/pic_bangle"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="22sp"
+                            android:clickable="false"
+                            android:textColor="#000000"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/annie_use_your_telescope"
+                            android:background="#ade2e2e2"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="5sp"
+                            android:text="Bangles"/>
+                    </RelativeLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5sp"
+                        android:clickable="true"
+                        android:id="@+id/earring_btn"
+                        android:layout_marginRight="5sp"
+                        android:layout_marginBottom="15sp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:clickable="false"
+                            android:src="@drawable/pic_earring" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="5sp"
+                            android:clickable="false"
+                            android:background="#ade2e2e2"
+                            android:fontFamily="@font/annie_use_your_telescope"
+                            android:text="Earrings"
+                            android:textColor="#000000"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:weightSum="3"
+                android:layout_weight="1">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5sp"
+                        android:id="@+id/pendant_btn"
+                        android:clickable="true"
+                        android:layout_marginRight="5sp"
+                        android:layout_marginBottom="15sp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:clickable="false"
+                            android:src="@drawable/pic_pendant" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="5sp"
+                            android:clickable="false"
+                            android:background="#ade2e2e2"
+                            android:fontFamily="@font/annie_use_your_telescope"
+                            android:text="Pendants"
+                            android:textColor="#000000"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5sp"
+                        android:clickable="true"
+                        android:id="@+id/mangalsutra_btn"
+                        android:layout_marginTop="15sp"
+                        android:layout_marginRight="5sp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:clickable="false"
+                            android:src="@drawable/pic_mangalsutra" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="5sp"
+                            android:background="#ade2e2e2"
+                            android:clickable="false"
+                            android:fontFamily="@font/annie_use_your_telescope"
+                            android:text="Mangalsutra"
+                            android:textColor="#000000"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5sp"
+                        android:layout_marginRight="5sp"
+                        android:clickable="true"
+                        android:id="@+id/rings_btn"
+                        android:layout_marginBottom="15sp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:clickable="false"
+                            android:src="@drawable/pic_rings" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="5sp"
+                            android:background="#ade2e2e2"
+                            android:clickable="false"
+                            android:fontFamily="@font/annie_use_your_telescope"
+                            android:text="Rings"
+                            android:textColor="#000000"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:weightSum="3"
+                android:layout_weight="1">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5sp"
+                        android:clickable="true"
+                        android:id="@+id/nosering_btn"
+                        android:layout_marginRight="5sp"
+                        android:layout_marginBottom="15sp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:clickable="false"
+                            android:src="@drawable/pic_nosering" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="5sp"
+                            android:background="#ade2e2e2"
+                            android:fontFamily="@font/annie_use_your_telescope"
+                            android:text="Nose Rings"
+                            android:clickable="false"
+                            android:textColor="#000000"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5sp"
+                        android:clickable="true"
+                        android:id="@+id/payal_btn"
+                        android:layout_marginTop="15sp"
+                        android:layout_marginRight="5sp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="false"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/pic_payal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="5sp"
+                            android:clickable="false"
+                            android:background="#ade2e2e2"
+                            android:fontFamily="@font/annie_use_your_telescope"
+                            android:text="Payals"
+                            android:textColor="#000000"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5sp"
+                        android:id="@+id/coins_btn"
+                        android:clickable="true"
+                        android:layout_marginRight="5sp"
+                        android:layout_marginBottom="15sp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:clickable="false"
+                            android:src="@drawable/pic_coin" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="5sp"
+                            android:background="#ade2e2e2"
+                            android:clickable="false"
+                            android:fontFamily="@font/annie_use_your_telescope"
+                            android:text="Coins &amp; Bars"
+                            android:textColor="#000000"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
