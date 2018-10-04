@@ -34,9 +34,40 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
+            android:gravity="center"
             android:layout_height="match_parent">
             <!-- Add Views Here -->
-
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="55sp"
+                android:layout_marginRight="40sp"
+                android:layout_marginLeft="40sp"
+                android:inputType="textPersonName"
+                android:hint="Enter Name"
+                android:padding="10sp"
+                android:id="@+id/enquiry_name"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="55sp"
+                android:layout_marginRight="40sp"
+                android:layout_marginLeft="40sp"
+                android:layout_marginTop="30sp"
+                android:inputType="phone"
+                android:maxLength="13"
+                android:hint="Enter Phone NUmber"
+                android:padding="10sp"
+                android:id="@+id/enquiry_no"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="55sp"
+                android:layout_marginRight="40sp"
+                android:layout_marginLeft="40sp"
+                android:layout_marginTop="30sp"
+                android:inputType="textMultiLine"
+                android:maxLines="4"
+                android:hint="Enter Description"
+                android:padding="10sp"
+                android:id="@+id/enquiry_desc"/>
             <!-- Add Views Here -->
         </LinearLayout>
     </ScrollView>
