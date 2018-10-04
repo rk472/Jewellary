@@ -108,7 +108,7 @@
                         android:fontFamily="@font/autour_one"
                         android:textAlignment="center"
                         android:layout_marginTop="10sp"
-                        android:text="M/S - Subhadra Jewellers\nAt/Po - Indupur\nP/S - Nikirai\nDist - Kendrapara\nOdisha"
+                        android:text="@string/address"
                         android:layout_gravity="center"
                         android:textSize="18dp"
                         android:textStyle="bold" />
