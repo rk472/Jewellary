@@ -36,7 +36,6 @@ public class DbItem {
     }
 
     public DbItem(String id, String url, String gos, String name) {
-
         this.id = id;
         this.url = url;
         this.gos = gos;

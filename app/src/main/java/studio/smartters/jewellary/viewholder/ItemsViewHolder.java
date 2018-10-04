@@ -33,12 +33,13 @@ public class ItemsViewHolder extends RecyclerView.ViewHolder {
 
     }
     public void setFavourite(final Context c, final String id,final String url,final String gos,final String name){
-            fav.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            fav.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    Toast.makeText(c, (!isChecked?"Removed From":"Added to")+" favourites", Toast.LENGTH_SHORT).show();
+                public void onClick(View v) {
+                    Toast.makeText(c, (!fav.isChecked()?"Removed From":"Added to")+" favourites", Toast.LENGTH_SHORT).show();
                     DBHelper db=new DBHelper(c);
-                    if(isChecked)
+                    if(fav.isChecked())
                         db.addFav(new DbItem(id,url,gos,name));
                     else
                         db.removeFav(id);

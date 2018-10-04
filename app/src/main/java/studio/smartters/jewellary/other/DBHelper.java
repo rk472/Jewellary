@@ -57,7 +57,7 @@ public class DBHelper extends SQLiteOpenHelper {
         if(res.getCount()>0) {
             res.moveToFirst();
             while (!res.isAfterLast()){
-                list.add(new DbItem(res.getString(res.getColumnIndex("id")),res.getString(res.getColumnIndex("url")),res.getString(res.getColumnIndex("gos")),res.getString(res.getColumnIndex("name"))));
+                list.add(new DbItem(res.getString(res.getColumnIndex("id")),res.getString(res.getColumnIndex("url")),res.getString(res.getColumnIndex("gos")),res.getString(res.getColumnIndex("type"))));
                 res.moveToNext();
             }
         }
