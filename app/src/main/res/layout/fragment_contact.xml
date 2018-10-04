@@ -64,7 +64,10 @@
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="20sp"
                     android:src="@drawable/ic_map_black_24dp"
-                    android:layout_marginTop="180sp"/>
+                    android:layout_marginTop="180sp"
+                    android:onClick="map"
+                    android:layout_marginBottom="20dp"
+                    android:elevation="@dimen/cardview_default_elevation"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_below="@id/image_container"
@@ -154,6 +157,7 @@
                                 android:background="@drawable/social_btn_shape"
                                 android:elevation="4dp"
                                 android:clickable="true"
+                                android:onClick="call"
                                 />
                             <TextView
                                 android:layout_width="match_parent"
@@ -183,6 +187,7 @@
                                 android:background="@drawable/social_btn_shape"
                                 android:elevation="4dp"
                                 android:clickable="true"
+                                android:onClick="mail"
                                 />
                             <TextView
                                 android:layout_width="match_parent"
@@ -210,6 +215,7 @@
                                 android:src="@drawable/whatsapp"
                                 android:scaleType="fitCenter"
                                 android:padding="15sp"
+                                android:onClick="whatsApp"
                                 android:elevation="4dp"
                                 android:clickable="true"/>
                             <TextView

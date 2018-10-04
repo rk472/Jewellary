@@ -18,18 +18,32 @@ import studio.smartters.jewellary.other.DBHelper;
 
 public class FavoriteFragment extends Fragment {
     private RecyclerView list;
+    private DBHelper db;
+    private static FavoriteFragment instance;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View v=inflater.inflate(R.layout.fragment_favorite, container, false);
-        DBHelper db=new DBHelper(getActivity());
+        db=new DBHelper(getActivity());
+        instance=this;
         list=v.findViewById(R.id.fav_list);
         list.setHasFixedSize(true);
-        list.setLayoutManager(new GridLayoutManager(getActivity(), 2, LinearLayoutManager.VERTICAL,false));
-        list.setAdapter(new FavAdapter(db.getFav(),(AppCompatActivity)getActivity()));
-        //Toast.makeText(getActivity(), db.getCount()+"", Toast.LENGTH_SHORT).show();
         return v;
     }
 
+    public static FavoriteFragment getInstance() {
+        return instance;
+    }
+
+    public void refresh(){
+        list.setLayoutManager(new GridLayoutManager(getActivity(), 2, LinearLayoutManager.VERTICAL,false));
+        list.setAdapter(new FavAdapter(db.getFav(),(AppCompatActivity)getActivity()));
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        refresh();
+    }
 }

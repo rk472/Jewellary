@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -27,6 +28,8 @@ public class ShowItemsFragment extends Fragment {
     private View v;
     public static String myData,myType;
     private RecyclerView list;
+    private DBHelper db;
+    private DatabaseReference itemRef;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,17 +44,27 @@ public class ShowItemsFragment extends Fragment {
                              Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_show_items, container, false);
         list=v.findViewById(R.id.item_list);
-        final DBHelper db=new DBHelper(getActivity());
-        DatabaseReference itemRef= FirebaseDatabase.getInstance().getReference("items/"+myData+"/"+myType);
+        db=new DBHelper(getActivity());
+        itemRef= FirebaseDatabase.getInstance().getReference("items/"+myData+"/"+myType);
+        itemRef.keepSynced(true);
+        list.setLayoutManager(new GridLayoutManager(getActivity(), 2,LinearLayoutManager.VERTICAL,false));
+        list.setHasFixedSize(true);
+        return v;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
         FirebaseRecyclerOptions<Items> options=new FirebaseRecyclerOptions.Builder<Items>()
-                                                                .setQuery(itemRef,Items.class)
-                                                                .build();
+                .setQuery(itemRef,Items.class)
+                .build();
         FirebaseRecyclerAdapter<Items,ItemsViewHolder> f=new FirebaseRecyclerAdapter<Items, ItemsViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull ItemsViewHolder holder, int position, @NonNull Items model) {
-                  holder.setImage(model.getImage(),getActivity());
-                  holder.setFavourite(getActivity(),getRef(position).getKey(),model.getImage(),myData,myType);
-                  holder.setFav(db.isFav(getRef(position).getKey()));
+                holder.setImage(model.getImage(),getActivity());
+                holder.setFavourite(getActivity(),getRef(position).getKey(),model.getImage(),myData,myType);
+                holder.setFav(db.isFav(getRef(position).getKey()));
+                holder.setEnquiry(getRef(position).getKey(), (AppCompatActivity) getActivity(),myData,myType);
             }
 
             @NonNull
@@ -61,10 +74,6 @@ public class ShowItemsFragment extends Fragment {
             }
         };
         f.startListening();
-        list.setLayoutManager(new GridLayoutManager(getActivity(), 2,LinearLayoutManager.VERTICAL,false));
-        list.setHasFixedSize(true);
         list.setAdapter(f);
-        return v;
     }
-
 }
