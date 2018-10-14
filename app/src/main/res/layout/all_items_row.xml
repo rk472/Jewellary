@@ -31,7 +31,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/item_name"
+                android:id="@+id/item_row_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/belgrano"
@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/item_sold"
+                    android:id="@+id/item_row_sold"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/belgrano"

@@ -19,7 +19,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table items(id text primary key,url text,gos text,type text)");
+        db.execSQL("create table items(id text primary key,url text,gos text,type text,original_name text,sold text)");
     }
 
     @Override
@@ -33,6 +33,8 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put("url", data.getUrl());
         contentValues.put("gos", data.getGos());
         contentValues.put("type", data.getName());
+        contentValues.put("original_name", data.getOriginalName());
+        contentValues.put("sold", data.getSold());
         Log.e("data",data.getGos());
         return db.insert("items", null, contentValues)>0;
     }
@@ -57,7 +59,7 @@ public class DBHelper extends SQLiteOpenHelper {
         if(res.getCount()>0) {
             res.moveToFirst();
             while (!res.isAfterLast()){
-                list.add(new DbItem(res.getString(res.getColumnIndex("id")),res.getString(res.getColumnIndex("url")),res.getString(res.getColumnIndex("gos")),res.getString(res.getColumnIndex("type"))));
+                list.add(new DbItem(res.getString(res.getColumnIndex("id")),res.getString(res.getColumnIndex("url")),res.getString(res.getColumnIndex("gos")),res.getString(res.getColumnIndex("type")),res.getString(res.getColumnIndex("original_name")),res.getString(res.getColumnIndex("sold"))));
                 res.moveToNext();
             }
         }

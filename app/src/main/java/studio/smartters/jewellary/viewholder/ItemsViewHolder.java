@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
@@ -22,12 +23,21 @@ import studio.smartters.jewellary.pojo.DbItem;
 public class ItemsViewHolder extends RecyclerView.ViewHolder {
     private ImageView img;
     private ToggleButton fav;
+    private TextView nameText,soldText;
     private View v;
     public ItemsViewHolder(View itemView) {
         super(itemView);
         img=itemView.findViewById(R.id.item_image);
         fav=itemView.findViewById(R.id.button_favorite);
+        nameText=itemView.findViewById(R.id.item_row_name);
+        soldText=itemView.findViewById(R.id.item_row_sold);
         v=itemView;
+    }
+    public void setName(String name){
+        nameText.setText(name);
+    }
+    public void setSold(String sold){
+        soldText.setText(sold);
     }
     public void setImage(final String url, final Context c){
         Picasso.with(c).load(url).networkPolicy(NetworkPolicy.OFFLINE).placeholder(R.drawable.pic_item)
@@ -49,7 +59,7 @@ public class ItemsViewHolder extends RecyclerView.ViewHolder {
             }
         });
     }
-    public void setFavourite(final Context c, final String id,final String url,final String gos,final String name){
+    public void setFavourite(final Context c, final String id,final String url,final String gos,final String name,final String originalName,final String sold){
 
             fav.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -57,7 +67,7 @@ public class ItemsViewHolder extends RecyclerView.ViewHolder {
                     Toast.makeText(c, (!fav.isChecked()?"Removed From":"Added to")+" favourites", Toast.LENGTH_SHORT).show();
                     DBHelper db=new DBHelper(c);
                     if(fav.isChecked())
-                        db.addFav(new DbItem(id,url,gos,name));
+                        db.addFav(new DbItem(id,url,gos,name,originalName,sold));
                     else
                         db.removeFav(id);
                 }
