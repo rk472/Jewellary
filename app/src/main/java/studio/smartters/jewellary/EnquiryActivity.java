@@ -53,7 +53,7 @@ public class EnquiryActivity extends AppCompatActivity {
             m.put("gos",gos);
             m.put("type",type);
             m.put("id",id);
-            FirebaseDatabase.getInstance().getReference().child("enquiry").updateChildren(m).addOnSuccessListener(new OnSuccessListener<Void>() {
+            FirebaseDatabase.getInstance().getReference().child("enquiry").push().updateChildren(m).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {
                     p.dismiss();
