@@ -1,6 +1,7 @@
 package studio.smartters.jewellary;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -100,7 +101,8 @@ public class ViewItemActivity extends AppCompatActivity {
         whatsappBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i=new Intent(Intent.ACTION_VIEW,Uri.parse("https://api.whatsapp.com/send?phone=+919439095207&text=Hii%20....I%20want%20to%20know%20about%20the%20Prduct%20"+gos+":"+type+",id:"+id));
+                startActivity(i);
             }
         });
         mBottomSheetDialog.setContentView(dialogView);
