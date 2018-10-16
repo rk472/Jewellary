@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EnquiryActivity">
-
     <android.support.v7.widget.CardView
         android:id="@+id/ac_bar"
         android:layout_width="match_parent"
@@ -37,37 +36,50 @@
             android:gravity="center"
             android:layout_height="match_parent">
             <!-- Add Views Here -->
-            <EditText
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="55sp"
-                android:layout_marginRight="40sp"
-                android:layout_marginLeft="40sp"
-                android:inputType="textPersonName"
-                android:hint="Enter Name"
-                android:padding="10sp"
-                android:id="@+id/enquiry_name"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="55sp"
                 android:layout_marginRight="40sp"
                 android:layout_marginLeft="40sp"
                 android:layout_marginTop="30sp"
-                android:inputType="phone"
-                android:maxLength="13"
-                android:hint="Enter Phone NUmber"
-                android:padding="10sp"
-                android:id="@+id/enquiry_no"/>
-            <EditText
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="55sp"
+                    android:inputType="textPersonName"
+                    android:hint="Name"
+                    android:padding="10sp"
+                    android:id="@+id/enquiry_name"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="55sp"
                 android:layout_marginRight="40sp"
                 android:layout_marginLeft="40sp"
                 android:layout_marginTop="30sp"
-                android:inputType="textMultiLine"
-                android:maxLines="4"
-                android:hint="Enter Description"
-                android:padding="10sp"
-                android:id="@+id/enquiry_desc"/>
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="55sp"
+                    android:inputType="phone"
+                    android:maxLength="13"
+                    android:hint="Phone Number"
+                    android:padding="10sp"
+                    android:id="@+id/enquiry_no"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_marginRight="40sp"
+                android:layout_marginLeft="40sp"
+                android:layout_marginTop="30sp"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="55sp"
+                    android:inputType="textMultiLine"
+                    android:maxLines="4"
+                    android:hint="Description"
+                    android:padding="10sp"
+                    android:id="@+id/enquiry_desc"/>
+            </android.support.design.widget.TextInputLayout>
             <!-- Add Views Here -->
         </LinearLayout>
     </ScrollView>
@@ -107,7 +119,6 @@
                 android:background="@color/colorAccent"
                 android:gravity="center"
                 android:onClick="openEnquiry">
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
