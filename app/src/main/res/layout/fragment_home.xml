@@ -50,8 +50,10 @@
                     android:textStyle="bold" />
                 <ImageButton
                     android:layout_width="match_parent"
+                    android:background="#00000000"
                     android:layout_alignParentBottom="true"
-                    android:background="@drawable/gold_new"
+                    android:src="@drawable/gold_new"
+                    android:scaleType="fitCenter"
                     android:layout_height="180sp" />
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -77,11 +79,11 @@
                 <ImageButton
                     android:layout_width="match_parent"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginLeft="30sp"
-                    android:layout_marginRight="30sp"
-                    android:layout_marginBottom="15sp"
-                    android:background="@drawable/silver_new"
-                    android:layout_height="140sp" />
+                    android:layout_marginBottom="10sp"
+                    android:background="#00000000"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/silver_new"
+                    android:layout_height="180sp" />
 
                 <RelativeLayout
                     android:id="@+id/silver_part"
