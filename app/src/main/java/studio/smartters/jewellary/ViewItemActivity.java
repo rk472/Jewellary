@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -40,7 +41,7 @@ public class ViewItemActivity extends AppCompatActivity {
         id= Objects.requireNonNull(getIntent().getExtras()).getString("id"," ");
         gos=Objects.requireNonNull(getIntent().getExtras()).getString("gos"," ");
         type=Objects.requireNonNull(getIntent().getExtras()).getString("type"," ");
-        itemRef= FirebaseDatabase.getInstance().getReference().child("items").child(gos).child(type).child(id);
+        itemRef= FirebaseDatabase.getInstance().getReference().child("items").child(gos).child(type);
         itemRef.keepSynced(true);
         descImage=findViewById(R.id.item_desc_image);
         nameText=findViewById(R.id.item_desc_name);
@@ -51,22 +52,37 @@ public class ViewItemActivity extends AppCompatActivity {
         itemRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                name=Objects.requireNonNull(dataSnapshot.child("name").getValue(String.class));
-                nameText.setText(name);
-                sold=Objects.requireNonNull(dataSnapshot.child("sold").getValue(String.class));
-                soldText.setText(sold);
-                url=dataSnapshot.child("image").getValue(String.class);
-                Picasso.with(ViewItemActivity.this).load(url).networkPolicy(NetworkPolicy.OFFLINE).placeholder(R.drawable.pic_item)
-                        .into(descImage, new Callback() {
-                            @Override
-                            public void onSuccess() {
-                            }
-                            @Override
-                            public void onError() {
-                                Picasso.with(ViewItemActivity.this).load(url).placeholder(R.drawable.pic_item).into(descImage);
-                            }
-                        });
-                linearLayout.setEnabled(true);
+                if(dataSnapshot.hasChild(id)){
+                    itemRef.child(id).addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            name=Objects.requireNonNull(dataSnapshot.child("name").getValue(String.class));
+                            nameText.setText(name);
+                            sold=Objects.requireNonNull(dataSnapshot.child("sold").getValue(String.class));
+                            soldText.setText(sold);
+                            url=dataSnapshot.child("image").getValue(String.class);
+                            Picasso.with(ViewItemActivity.this).load(url).networkPolicy(NetworkPolicy.OFFLINE).placeholder(R.drawable.pic_item)
+                                    .into(descImage, new Callback() {
+                                        @Override
+                                        public void onSuccess() {
+                                        }
+                                        @Override
+                                        public void onError() {
+                                            Picasso.with(ViewItemActivity.this).load(url).placeholder(R.drawable.pic_item).into(descImage);
+                                        }
+                                    });
+                            linearLayout.setEnabled(true);
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
+                }else{
+                    Toast.makeText(ViewItemActivity.this, "The product is no longer available", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
             }
 
             @Override
@@ -95,7 +111,7 @@ public class ViewItemActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
-                startActivity(new Intent(ViewItemActivity.this,EnquiryActivity.class).putExtra("id",id));
+                startActivity(new Intent(ViewItemActivity.this,EnquiryActivity.class).putExtra("id",id).putExtra("gos",gos).putExtra("type",type));
             }
         });
         whatsappBtn.setOnClickListener(new View.OnClickListener() {
