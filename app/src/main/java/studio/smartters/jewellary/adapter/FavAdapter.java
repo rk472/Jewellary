@@ -32,6 +32,8 @@ public class FavAdapter extends RecyclerView.Adapter<ItemsViewHolder> {
         holder.setFav(true);
         holder.setImage(list.get(position).getUrl(),a);
         holder.setFavouriteWithRefresh(a,list.get(position).getId());
+        holder.setName(list.get(position).getOriginalName());
+        holder.setSold(list.get(position).getSold());
         holder.setEnquiry(list.get(position).getId(),a,list.get(position).getGos(),list.get(position).getName());
     }
 

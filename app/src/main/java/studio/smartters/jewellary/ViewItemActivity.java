@@ -1,6 +1,7 @@
 package studio.smartters.jewellary;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,11 +27,12 @@ import studio.smartters.jewellary.pojo.DbItem;
 public class ViewItemActivity extends AppCompatActivity {
     private View dialogView;
     private LinearLayout whatsappBtn,appBtn;
-    private String id,gos,type,url;
+    private String id,gos,type,url,sold,name;
     private ImageView descImage;
     private TextView nameText,soldText,favText;
     private DatabaseReference itemRef;
     private DBHelper db;
+    private LinearLayout linearLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,11 +46,15 @@ public class ViewItemActivity extends AppCompatActivity {
         nameText=findViewById(R.id.item_desc_name);
         soldText=findViewById(R.id.item_desc_sold);
         favText=findViewById(R.id.favorite_text);
+        linearLayout=findViewById(R.id.lin_fav);
+        linearLayout.setEnabled(false);
         itemRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                nameText.setText(Objects.requireNonNull(dataSnapshot.child("name").getValue(String.class)));
-                soldText.setText(Objects.requireNonNull(dataSnapshot.child("sold").getValue(String.class)));
+                name=Objects.requireNonNull(dataSnapshot.child("name").getValue(String.class));
+                nameText.setText(name);
+                sold=Objects.requireNonNull(dataSnapshot.child("sold").getValue(String.class));
+                soldText.setText(sold);
                 url=dataSnapshot.child("image").getValue(String.class);
                 Picasso.with(ViewItemActivity.this).load(url).networkPolicy(NetworkPolicy.OFFLINE).placeholder(R.drawable.pic_item)
                         .into(descImage, new Callback() {
@@ -60,6 +66,7 @@ public class ViewItemActivity extends AppCompatActivity {
                                 Picasso.with(ViewItemActivity.this).load(url).placeholder(R.drawable.pic_item).into(descImage);
                             }
                         });
+                linearLayout.setEnabled(true);
             }
 
             @Override
@@ -94,7 +101,8 @@ public class ViewItemActivity extends AppCompatActivity {
         whatsappBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i=new Intent(Intent.ACTION_VIEW,Uri.parse("https://api.whatsapp.com/send?phone=+919439095207&text=Hii%20....I%20want%20to%20know%20about%20the%20Prduct%20"+gos+":"+type+",id:"+id));
+                startActivity(i);
             }
         });
         mBottomSheetDialog.setContentView(dialogView);
@@ -106,7 +114,7 @@ public class ViewItemActivity extends AppCompatActivity {
             db.removeFav(id);
             favText.setText("Add to favorites");
         }else{
-            db.addFav(new DbItem(id,url,gos,type));
+            db.addFav(new DbItem(id,url,gos,type,name,sold));
             favText.setText("Remove From Favorites");
         }
     }

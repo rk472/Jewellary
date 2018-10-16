@@ -1,7 +1,7 @@
 package studio.smartters.jewellary.pojo;
 
 public class DbItem {
-    private String id,url,gos,name;
+    private String id,url,gos,name,originalName,sold;
 
     public String getId() {
         return id;
@@ -35,10 +35,29 @@ public class DbItem {
         this.name = name;
     }
 
-    public DbItem(String id, String url, String gos, String name) {
+    public String getOriginalName() {
+        return originalName;
+    }
+
+    public void setOriginalName(String originalName) {
+        this.originalName = originalName;
+    }
+
+    public String getSold() {
+        return sold;
+    }
+
+    public void setSold(String sold) {
+        this.sold = sold;
+    }
+
+    public DbItem(String id, String url, String gos, String name, String originalName, String sold) {
         this.id = id;
         this.url = url;
         this.gos = gos;
         this.name = name;
+        this.originalName = originalName;
+        this.sold = sold;
+
     }
 }

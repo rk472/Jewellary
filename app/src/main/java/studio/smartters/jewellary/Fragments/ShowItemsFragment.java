@@ -12,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -30,6 +31,7 @@ public class ShowItemsFragment extends Fragment {
     private RecyclerView list;
     private DBHelper db;
     private DatabaseReference itemRef;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,9 +64,11 @@ public class ShowItemsFragment extends Fragment {
             @Override
             protected void onBindViewHolder(@NonNull ItemsViewHolder holder, int position, @NonNull Items model) {
                 holder.setImage(model.getImage(),getActivity());
-                holder.setFavourite(getActivity(),getRef(position).getKey(),model.getImage(),myData,myType);
+                holder.setFavourite(getActivity(),getRef(position).getKey(),model.getImage(),myData,myType,model.getName(),model.getSold());
                 holder.setFav(db.isFav(getRef(position).getKey()));
                 holder.setEnquiry(getRef(position).getKey(), (AppCompatActivity) getActivity(),myData,myType);
+                holder.setSold(model.getSold());
+                holder.setName(model.getName());
             }
 
             @NonNull
