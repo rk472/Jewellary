@@ -70,7 +70,8 @@
                             android:clickable="false"
                             android:src="@drawable/pic_necklace"/>
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
+                            android:textAlignment="center"
                             android:layout_height="wrap_content"
                             android:textSize="22sp"
                             android:textColor="#000000"
@@ -80,7 +81,6 @@
                             android:clickable="false"
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginBottom="5sp"
                             android:text="Necklaces"/>
                     </RelativeLayout>
                 </LinearLayout>
@@ -103,7 +103,8 @@
                             android:clickable="false"
                             android:src="@drawable/pic_bangle"/>
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
+                            android:textAlignment="center"
                             android:layout_height="wrap_content"
                             android:textSize="22sp"
                             android:clickable="false"
@@ -113,7 +114,6 @@
                             android:background="#ade2e2e2"
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginBottom="5sp"
                             android:text="Bangles"/>
                     </RelativeLayout>
                 </LinearLayout>
@@ -139,11 +139,11 @@
                             android:src="@drawable/pic_earring" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
+                            android:textAlignment="center"
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginBottom="5sp"
                             android:clickable="false"
                             android:background="#ade2e2e2"
                             android:fontFamily="@font/annie_use_your_telescope"
@@ -181,11 +181,11 @@
                             android:src="@drawable/pic_pendant" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
+                            android:textAlignment="center"
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginBottom="5sp"
                             android:clickable="false"
                             android:background="#ade2e2e2"
                             android:fontFamily="@font/annie_use_your_telescope"
@@ -217,11 +217,11 @@
                             android:src="@drawable/pic_mangalsutra" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
+                            android:textAlignment="center"
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginBottom="5sp"
                             android:background="#ade2e2e2"
                             android:clickable="false"
                             android:fontFamily="@font/annie_use_your_telescope"
@@ -253,11 +253,11 @@
                             android:src="@drawable/pic_rings" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
+                            android:textAlignment="center"
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginBottom="5sp"
                             android:background="#ade2e2e2"
                             android:clickable="false"
                             android:fontFamily="@font/annie_use_your_telescope"
@@ -295,11 +295,11 @@
                             android:src="@drawable/pic_nosering" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
+                            android:textAlignment="center"
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginBottom="5sp"
                             android:background="#ade2e2e2"
                             android:fontFamily="@font/annie_use_your_telescope"
                             android:text="Nose Rings"
@@ -331,11 +331,11 @@
                             android:src="@drawable/pic_payal" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
+                            android:textAlignment="center"
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginBottom="5sp"
                             android:clickable="false"
                             android:background="#ade2e2e2"
                             android:fontFamily="@font/annie_use_your_telescope"
@@ -367,11 +367,11 @@
                             android:src="@drawable/pic_coin" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
+                            android:textAlignment="center"
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginBottom="5sp"
                             android:background="#ade2e2e2"
                             android:clickable="false"
                             android:fontFamily="@font/annie_use_your_telescope"
